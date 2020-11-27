@@ -112,29 +112,45 @@ f[,5]=f[,5]-G[2]
 f[,6]=f[,6]-G[3]　　# 重心系に変換
 
 
-Ind45=(1/(6.02*10^26))*sum(f[,4]*f[,5]*mm)
-
 Ind=function(i,j)
-{(1/(6.02*10^26))*sum(f[,i]*f[,j]*mm)}
 
-
-
-
+  
+  {(1/(6.02*10^26))*sum(f[,i]*f[,j]*mm)}
 
 
 Id=function(i)
   
-  {(1/(6.02*10^26))*(sum(f[,i]^2*mm)+sum(f[,i]^2*mm))
+  {  a=data.frame(x=c(4,5,6))
+  
+  g=function(y){
+    
+    a %>% filter(a[]!=y)
+  }
+  
+  k=g(i)[1,]
+  l=g(i)[2,]
+  
+  y=(1/(6.02*10^26))*(sum(f[,k]^2*mm)+sum(f[,l]^2*mm))
+  
+  return(y)
   
 }
 
-
 I0=diag(0,3)
 
-diag(I0)=c(Id[],Iyy,Izz) 
+diag(I0)=c(Id(4),Id(5),Id(6)) 
 
 #対角成分
-I1=rbind(c(0,-Ixy,-Ixz),c(0,0,-Izy),c(0,0,0))  
+I1=rbind(c(0,-Ind(4,5),-Ind(4,6)),c(0,0,-Ind(5,6)),c(0,0,0))  
+
+
+I=I0+I1+t(I1)
+
+
+
+
+
+
 
 
 
