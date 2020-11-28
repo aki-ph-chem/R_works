@@ -52,3 +52,7 @@ f3=data.frame(f)
 
 plot3d(f3$X4,f3$X5,f3$X6,col = fcol[f3[,2]],type = "s")　#分子全体
 
+
+
+
+
