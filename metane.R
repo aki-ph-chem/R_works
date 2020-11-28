@@ -52,7 +52,32 @@ f3=data.frame(f)
 
 plot3d(f3$X4,f3$X5,f3$X6,col = fcol[f3[,2]],type = "s")　#分子全体
 
+#####動かしてみる#####
 
+
+f2=f
+
+n1=f2[2,4:6]-f2[1,4:6]
+
+r_ni=sqrt(sum(n1*n1))
+
+n1=n1/r_ni
+
+for (k in c(3:5)) {
+  
+  
+  f2[k,4:6]=Rot(0)%*%f2[k,4:6]
+  
+}
+
+
+f3=data.frame(f2)
+
+
+
+ffcol=c(1,2,3,4,5)
+
+plot3d(f3$X4,f3$X5,f3$X6,col = ffcol[f3[,1]],type = "s")
 
 
 
