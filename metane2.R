@@ -42,4 +42,30 @@ n
 AN
 f
 
+
+
+#####検索プログラムの改良#####
+
 which(metane2[]== "                         Standard orientation:                         " )
+
+
+ob="           Standard orientation:       "
+
+ob2=ob %>%  strsplit("  ")
+
+
+while (ob2[[1]][]==" Standard orientation:") {
+  
+}
+
+
+
+
+which(ob2[[1]][]==" Standard orientation:")
+ob2
+
+
+
+
+
+
