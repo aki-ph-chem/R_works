@@ -41,6 +41,19 @@ AN
 f
 
 
+#####スチルベンの回転######
+
+fd=data.frame(f)
+
+plot3d(f[,4],f[,5],f[,6],col = f[,1],type = "s")　#分子全体
+
+carbon=fd %>% filter(fd[,2]==6)
+
+plot3d(carbon[,4],carbon[,5],carbon[,6],col=carbon[,1],type = "s") #炭素骨格のみ
+
+
+
+
 #####ロドリゲス回転公式を実装してみる#######
 
 
