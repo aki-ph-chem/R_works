@@ -1,5 +1,5 @@
 
-######readLines関数による読み込みプログラムを##########
+######readLines関数による読み込みプログラム##########
 
 
 metane2=readLines("etylene.txt")
@@ -44,7 +44,7 @@ f
 
 
 
-####メタンを表示####
+####エチレンを表示####
 
 
 
@@ -59,9 +59,9 @@ plot3d(f3$X4,f3$X5,f3$X6,col =f3[,1],type = "s")　#分子全体の表示
 
 f2=f
 
-x=pi/6
+x=pi/2
 
-n1=f2[2,4:6]-f2[1,4:6]
+n1=f2[4,4:6]-f2[1,4:6]
 
 r_ni=sqrt(sum(n1*n1))
 
@@ -89,7 +89,7 @@ Rot=function(x)
 
 
 
-for (k in c(3:5)) {
+for (k in c(4:6)) {
   
   
   f2[k,4:6]=Rot(x)%*%f2[k,4:6]
