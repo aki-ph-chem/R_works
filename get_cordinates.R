@@ -18,6 +18,9 @@ n=str_detect(metane2,"Standard orientation") %>% which() %>% max()
 atm2=metane2[(n+5):(n+5+AN-1)]
 
 
+atm2 
+
+atm2 %>% str_extract_all(pattern = "\\d+")
 
 
 
