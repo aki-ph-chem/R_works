@@ -1,5 +1,5 @@
 
-#####program to get atomic cordinates #######
+#####program to get atomic coordinates #######
 
 
 metane2=readLines("metane2.txt")
@@ -12,13 +12,13 @@ library(stringr)
 AN=5 #原子数
 
 
-n=which(metane2[]== "                         Standard orientation:                         " ) %>% max()
-
-
-
+n=str_detect(metane2,"Standard orientation") %>% which() %>% max()
 
 
 atm2=metane2[(n+5):(n+5+AN-1)]
+
+
+
 
 
 
