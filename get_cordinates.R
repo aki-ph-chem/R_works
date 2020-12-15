@@ -2,27 +2,27 @@
 #####program to get atomic coordinates #######
 
 
-metane2=readLines("metane2.txt")
-
 
 library(dplyr)
 
 library(stringr)
 
+
+##### plase insert the data ########
+
 AN=5 #原子数
 
 
-n=str_detect(metane2,"Standard orientation") %>% which() %>% max()
+y=readLines("metane2.txt")  #データの入力
 
 
-atm2=metane2[(n+5):(n+5+AN-1)]
+######process########
 
 
-atm2 
-
-atm2 %>% str_extract_all(pattern = "\\d+")
+n=str_detect(y,"Standard orientation") %>% which() %>% max()
 
 
+atm2=y[(n+5):(n+5+AN-1)]
 
 
 atm_n2=atm2[] %>% strsplit(" ") %>% type.convert() ##　文字列を分割して数値に変換
