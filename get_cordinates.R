@@ -7,10 +7,15 @@ metane2=readLines("metane2.txt")
 
 library(dplyr)
 
+library(stringr)
+
 AN=5 #原子数
 
 
 n=which(metane2[]== "                         Standard orientation:                         " ) %>% max()
+
+
+
 
 
 atm2=metane2[(n+5):(n+5+AN-1)]
