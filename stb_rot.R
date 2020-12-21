@@ -134,6 +134,6 @@ x=rep(1,14)
 
 
 
-plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #炭素骨格のみ
+plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #炭素骨格のみ90度回転した
 
 
