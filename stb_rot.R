@@ -123,19 +123,87 @@ z=c(1,26,13:23)
 for (k in z) {
   
   
-  f2[k,4:6]=Rot(90)%*%f2[k,4:6]
+  f2[k,4:6]=Rot(10.5)%*%f2[k,4:6]
   
 }
 
 f2
 
 
-f2c=f2 %>% data.frame() %>% filter(f2[,2]==6)
+f2c=f2
 
-x=rep(1,14)
+x=rep(1,26)
+
+
+
+plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #10.5度回転した
+
+
+#####フェニル基1の回転#######
+
+f_ph1=f
+
+n1=f_ph1[3,4:6]-f_ph1[2,4:6]
+
+r_ni=sqrt(sum(n1*n1))
+
+n1=n1/r_ni
+
+
+z=c(3:12,24)
+
+
+for (k in z) {
+  
+  
+  f_ph1[k,4:6]=Rot(90)%*%f_ph1[k,4:6]
+  
+}
+
+
+
+
+f2c=f_ph1
+
+x=rep(1,26)
 
 
 
 plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #炭素骨格のみ90度回転した
+
+
+#####フェニル基2の回転#####
+
+
+f_ph2=f
+
+n1=f_ph2[13,4:6]-f_ph2[1,4:6]
+
+r_ni=sqrt(sum(n1*n1))
+
+n1=n1/r_ni
+
+
+z=c(13:23)
+
+
+for (k in z) {
+  
+  
+  f_ph2[k,4:6]=Rot(90)%*%f_ph2[k,4:6]
+  
+}
+
+
+f2c=f_ph2
+
+x=rep(1,26)
+
+
+
+plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #炭素骨格のみ90度回転した
+
+
+
 
 
