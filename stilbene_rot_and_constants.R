@@ -2,11 +2,10 @@
 library(dplyr)
 library(rgl)
 
-
 ###########データの取得#############
 AN=26 #原子数
 
-stb3=read.csv("stb3.csv")
+stb3=read.csv("stb3.csv")  
 
 n=which(stb3[,]=="Standard orientation:") %>% max()
 
@@ -83,6 +82,9 @@ x=rep(1,26)
 
 
 plot3d(f2c[,4],f2c[,5],f2c[,6],col=x,type = "s") #炭素骨格のみ90度回転した
+
+
+
 
 
 #####慣性テンソルを計算してみる#####
